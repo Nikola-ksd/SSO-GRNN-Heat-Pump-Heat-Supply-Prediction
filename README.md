@@ -4,24 +4,6 @@ A complete Python implementation based on the paper *"Heat Supply Prediction for
 
 
 
-Complete Data Preprocessing Pipeline**: Linear interpolation for missing values, 3σ principle outlier detection and handling, Min-Max normalization
-SSA Time Series Denoising and Reconstruction**: Singular Spectrum Analysis decomposes the original series, retaining effective components with cumulative contribution ≥ 95%
-Dual Correlation Feature Screening**: Combines Pearson (linear) and Spearman (monotonic nonlinear) correlation analysis to select key features with |r|>0.3 and |ρ|>0.3
-SSO-Optimized GRNN Model**: Sparrow Search Optimization optimizes the smoothing factor σ of Generalized Regression Neural Network
-Multiple Comparative Model Implementations:
-Traditional GRNN (fixed σ=0.1)
- Seasonal ARIMA
- LSTM
- PSO-optimized SVM
- SSO-optimized LSTM
-Comprehensive Performance Evaluation System:
-Core metrics: MAE, MSE, RMSE, MAPE, R²
-Error distribution characteristic analysis
- Performance comparison under different volatility levels
-  Seasonal adaptability analysis
-  Noise interference robustness testing
-  Morris screening method for feature sensitivity analysis
-COP Prediction and Defrosting Period Analysis**: Additional implementation of heat pump system COP prediction with separate evaluation for defrosting/non-defrosting periods
 
 Installation
 
@@ -45,7 +27,7 @@ tensorflow>=2.8.0
 Usage
 
 1. Prepare Data: Save your data in Excel format, ensuring it includes the following key columns (column names should match the paper):
-Target column: `Hourly Heat Supply (kW)`
+Target column: Hourly Heat Supply (kW)
 Feature columns: Ambient temperature, supply water temperature, return water temperature, system power, etc. (specific column names can be adjusted according to actual data, the code will automatically identify)
 
 2. Configure File Path: Open the code and modify the filename variable on line 17:
